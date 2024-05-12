@@ -8,7 +8,7 @@ const Item = ({ book }) => {
   const addBookToCart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
-  function handleAddBookToCart() {
+  function handleAddBookToCart(book) {
     dispatch(cartActions.addItem(book));
   }
   return (
@@ -22,10 +22,11 @@ const Item = ({ book }) => {
       <div className="flex justify-between px-8">
         <p className="text-black">{book.Description}</p>
         <Button
-          tailwindcss="min-w-28 active:bg-rose-500"
-          buttonText="Add To Cart"
+          tailwindcss="min-w-28 active:bg-rose-500 p-2 text-blue-400 border-[.3px] border-blue-400 rounded-xl self-end"
           onClick={() => handleAddBookToCart(book)}
-        />
+        >
+          Add To Cart
+        </Button>
       </div>
     </li>
   );
