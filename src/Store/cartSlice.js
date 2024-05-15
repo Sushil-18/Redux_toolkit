@@ -4,6 +4,7 @@ const initialState = {
   items: [],
   totalItems: 0,
   totalPrice: 0,
+  showCart: false,
 };
 
 const cartSlice = createSlice({
@@ -34,6 +35,10 @@ const cartSlice = createSlice({
       }
       state.totalItems -= 1;
       state.totalPrice -= existingItem.Price;
+    },
+    showCart: (state) => {
+      state.showCart = !state.showCart;
+      console.log(state.showCart);
     },
   },
 });

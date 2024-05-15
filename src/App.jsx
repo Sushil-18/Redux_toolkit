@@ -4,11 +4,11 @@ import Items from "./Components/Items";
 import { useSelector } from "react-redux";
 
 function App() {
-  const showCart = useSelector((state) => state.cart.items);
+  const showCart = useSelector((state) => state.cart.showCart);
   return (
     <>
       <Navbar />
-
+      {showCart && <Cart />}
       <Items />
     </>
   );
