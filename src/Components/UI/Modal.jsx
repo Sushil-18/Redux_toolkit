@@ -13,7 +13,7 @@ const Modal = ({ children, open, onClose }) => {
   return createPortal(
     <dialog
       ref={dialog}
-      className={`min-w-[35vw]  border-0 rounded-xl`}
+      className={`min-w-[35vw]  border-0 rounded-xl backdrop-blur-md`}
       onClose={onClose}
     >
       {" "}

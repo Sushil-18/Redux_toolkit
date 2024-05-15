@@ -8,6 +8,7 @@ import Modal from "./UI/Modal";
 const Cart = () => {
   const books = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const showCart = useSelector((state) => state.cart.showCart);
   const dispatch = useDispatch();
 
   function handleBookIncrement(book) {
@@ -17,9 +18,12 @@ const Cart = () => {
   function handleBookDecrement(id) {
     dispatch(cartActions.removeItem(id));
   }
+  function handleCloseCart() {
+    dispatch(cartActions.showCart());
+  }
   return (
-    <Modal>
-      <div className="flex flex-col mx-auto w-[30%] bg-stone-500 h-auto p-4 border-0 rounded-xl">
+    <Modal open={showCart} onClose={handleCloseCart}>
+      <div className="flex flex-col mx-auto  bg-stone-500 h-auto p-4 border-0 rounded-xl">
         <p className="text-center">Your Shopping Cart</p>
         {books.map((book) => (
           <div
@@ -49,6 +53,7 @@ const Cart = () => {
             </div>
           </div>
         ))}
+        <Button onClick={handleCloseCart}>Close</Button>
       </div>
     </Modal>
   );
