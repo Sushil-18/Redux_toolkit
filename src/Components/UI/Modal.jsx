@@ -7,13 +7,14 @@ const Modal = ({ children, open, onClose }) => {
     const modal = dialog.current;
     if (open) {
       modal.showModal();
+    } else {
+      modal.close();
     }
-    return () => modal.close();
   }, [open]);
   return createPortal(
     <dialog
       ref={dialog}
-      className={`min-w-[35vw]  border-0 rounded-xl backdrop-blur-md`}
+      className={`min-w-[35vw]  border-0 rounded-xl backdrop-filter backdrop-blur-md`}
       onClose={onClose}
     >
       {" "}

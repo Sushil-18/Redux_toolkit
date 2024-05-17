@@ -35,12 +35,9 @@ const cartSlice = createSlice({
       }
       state.totalItems -= 1;
       state.totalPrice -= existingItem.Price;
-      if (state.totalItems === 0) {
-        state.showCart = false;
-      }
     },
-    showCart: (state) => {
-      state.showCart = !state.showCart;
+    showCart: (state, action) => {
+      state.showCart = action.payload;
     },
   },
 });

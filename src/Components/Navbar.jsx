@@ -1,3 +1,4 @@
+// Navbar component
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../Store/cartSlice";
@@ -7,7 +8,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   function handleShowCart() {
-    dispatch(cartActions.showCart());
+    dispatch(cartActions.showCart(true));
   }
 
   return (
