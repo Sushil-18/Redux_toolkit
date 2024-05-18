@@ -5,4 +5,12 @@ export default {
     extend: {},
   },
   plugins: [],
+  corePlugins: {
+    backdropFilter: true,
+  },
+  variants: {
+    extend: {
+      backdropBlur: ["responsive"],
+    },
+  },
 };

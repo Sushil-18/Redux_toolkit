@@ -34,7 +34,7 @@ const Cart = () => {
   }
   return (
     <Modal open={showCart} onClose={handleCloseCart}>
-      <div className="flex flex-col mx-auto  bg-stone-500 h-auto p-4 border-0 rounded-xl">
+      <div className="flex flex-col mx-auto  bg-stone-500 h-auto w-[100%] p-4 border-0 rounded-xl">
         <p className="text-center">Your Shopping Cart</p>
         {books.map((book) => (
           <div

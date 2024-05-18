@@ -11,16 +11,16 @@ const Modal = ({ children, open, onClose }) => {
       modal.close();
     }
   }, [open]);
-  return createPortal(
+  return (
     <dialog
       ref={dialog}
-      className={`min-w-[35vw]  border-0 rounded-xl backdrop-filter backdrop-blur-md`}
+      className={`fixed inset-0 flex justify-self-center self-center 
+      min-w-[35vw] m-0 rounded-xl bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl`}
       onClose={onClose}
     >
       {" "}
       {children}
-    </dialog>,
-    document.getElementById("modal")
+    </dialog>
   );
 };
 
